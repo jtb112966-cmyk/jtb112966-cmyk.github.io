@@ -110,3 +110,166 @@ body {
     grid-template-columns: 250px 1fr;
   }
 }
+.contact-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  padding: 25px;
+  border-radius: 14px;
+  max-width: 480px;
+}
+
+.contact-card p {
+  margin-top: 0;
+  color: #9ca3af;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.contact-btn {
+  display:block;
+  background: linear-gradient(to right, #f97316, #fb923c);
+  color: #020617;
+  padding: 12px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+}
+/* === INDUSTRIAL EXECUTIVE VISUAL UPGRADE === */
+
+/* Hero Background Enhancement */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0c0f14, #1a1f2b);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.25;
+  mix-blend-mode: overlay;
+}
+
+/* Add glow to name */
+.hero h1 {
+  text-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+}
+
+/* Hero photo enhancement */
+.hero-photo img {
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.hero-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(249, 115, 22, 0.6);
+}
+
+/* Section Divider */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #f97316, transparent);
+}
+
+/* Contact Card Enhancement */
+.contact-card {
+  background: linear-gradient(145deg, #0e131d, #1c2333);
+  border: 1px solid rgba(249,115,22,0.3);
+}
+
+/* Animated Button Hover */
+.contact-btn:hover {
+  background: linear-gradient(135deg, #ff9a3c, #f97316);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(249,115,22,0.4);
+}
+/* === EXTRA VISUAL POLISH === */
+
+/* Hero panel: more depth and presence */
+.hero-inner {
+  padding: 28px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top left, rgba(249,115,22,0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(56,189,248,0.12), transparent 55%),
+    rgba(15,23,42,0.92);
+  border: 1px solid rgba(148,163,184,0.35);
+  box-shadow: 0 22px 50px rgba(15,23,42,0.9);
+}
+
+/* Section headings with accent line */
+.section h2 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 80px;
+  background: linear-gradient(to right, #f97316, transparent);
+  opacity: 0.7;
+}
+
+/* Card hover lift & glow */
+.card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249,115,22,0.5);
+  box-shadow: 0 18px 30px rgba(15,23,42,0.9);
+}
+
+/* Soft fade-in animation for sections */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+.section {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+/* Slight stagger so sections don't pop in at once */
+section.section:nth-of-type(2) { animation-delay: 0.05s; }
+section.section:nth-of-type(3) { animation-delay: 0.10s; }
+section.section:nth-of-type(4) { animation-delay: 0.15s; }
+section.section:nth-of-type(5) { animation-delay: 0.20s; }
