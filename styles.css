@@ -1,11 +1,11 @@
-/* === COLOR TOKENS FOR JB GREEN + GOLD === */
+/* === COLOR TOKENS FOR JB EMERALD + GOLD === */
 
 :root {
-  --jb-bg-dark: #02110b;
-  --jb-bg: #052016;
-  --jb-bg-light: #0a2b1d;
+  --jb-bg-dark: #020c08;
+  --jb-bg: #031810;
+  --jb-bg-light: #063121;
 
-  --jb-vein: rgba(255, 215, 160, 0.12);
+  --jb-vein: rgba(244, 210, 119, 0.32);
 
   --jb-gold: #f4d277;
   --jb-gold-deep: #c89a2b;
@@ -16,19 +16,16 @@
   --jb-border-subtle: rgba(244, 210, 119, 0.26);
 }
 
-/* === GLOBAL === */
+/* === GLOBAL MARBLE BACKGROUND === */
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: var(--jb-text);
-  background:
-    radial-gradient(circle at 0% 0%, var(--jb-vein) 0, transparent 45%),
-    radial-gradient(circle at 100% 100%, var(--jb-vein) 0, transparent 45%),
-    radial-gradient(circle at 100% 0%, var(--jb-vein) 0, transparent 45%),
-    radial-gradient(circle at 0% 100%, var(--jb-vein) 0, transparent 45%),
-    linear-gradient(135deg, var(--jb-bg-dark), var(--jb-bg), var(--jb-bg-light));
+  background: url('emerald-marble-bg.png') no-repeat center center fixed;
+  background-size: cover;
   background-attachment: fixed;
+  background-color: #020c08;
 }
 
 .container {
@@ -40,15 +37,14 @@ body {
 /* === HEADER / BRAND BANNER === */
 
 .site-header {
-  background:
-    radial-gradient(circle at 0 0, rgba(244, 210, 119, 0.20), transparent 60%),
-    radial-gradient(circle at 100% 100%, rgba(244, 210, 119, 0.12), transparent 60%),
-    linear-gradient(135deg, var(--jb-bg-dark), var(--jb-bg), var(--jb-bg-dark));
-  border-bottom: 1px solid var(--jb-border-subtle);
-  box-shadow:
-    0 24px 50px rgba(0, 0, 0, 0.95),
-    0 0 26px rgba(244, 210, 119, 0.3);
-  padding: 24px 0 28px;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+  padding: 0; /* no top gap */
+}
+
+.site-header .container {
+  padding: 10px 0 0; /* tight padding under logo */
 }
 
 .header-inner {
@@ -57,21 +53,19 @@ body {
   justify-content: center;
 }
 
-/* Brand wrapper just centers the logo */
 .brand {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Big, “banner-feeling” logo */
 .brand-logo {
   max-height: 180px;
   width: auto;
   display: block;
   border-radius: 18px;
   box-shadow:
-    0 0 26px rgba(244, 210, 119, 0.6),
+    0 0 32px rgba(244, 210, 119, 0.9),
     0 18px 40px rgba(0, 0, 0, 0.95);
 }
 
@@ -79,8 +73,12 @@ body {
 
 .hero {
   position: relative;
-  padding: 80px 0;
+  padding: 0 0 40px; /* fully remove top padding */
   overflow: hidden;
+}
+
+.hero .container {
+  padding-top: 0; /* kills container padding that created gap */
 }
 
 .hero::before {
@@ -88,10 +86,10 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(244, 210, 119, 0.18), transparent 60%),
-    radial-gradient(circle at bottom right, rgba(244, 210, 119, 0.12), transparent 60%);
+    radial-gradient(circle at top left, rgba(244, 210, 119, 0.18), transparent 65%),
+    radial-gradient(circle at bottom right, rgba(244, 210, 119, 0.10), transparent 65%);
   mix-blend-mode: screen;
-  opacity: 0.9;
+  opacity: 0.85;
   pointer-events: none;
 }
 
@@ -100,22 +98,16 @@ body {
   display: grid;
   gap: 30px;
   align-items: center;
-  padding: 28px;
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at top left, rgba(244, 210, 119, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(4, 120, 87, 0.2), transparent 55%),
-    rgba(2, 17, 11, 0.93);
-  border: 1px solid var(--jb-border-subtle);
-  box-shadow:
-    0 28px 60px rgba(0, 0, 0, 0.9),
-    0 0 24px rgba(244, 210, 119, 0.25);
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .hero h1 {
   font-size: 48px;
   color: var(--jb-gold);
-  text-shadow: 0 0 22px rgba(244, 210, 119, 0.6);
+  text-shadow: 0 0 22px rgba(244, 210, 119, 0.7);
   margin-bottom: 10px;
 }
 
@@ -125,8 +117,6 @@ body {
   font-size: 18px;
 }
 
-/* Hero photo */
-
 .hero-photo img {
   width: 220px;
   height: 220px;
@@ -134,7 +124,7 @@ body {
   border-radius: 50%;
   border: 4px solid var(--jb-gold);
   box-shadow:
-    0 0 24px rgba(244, 210, 119, 0.7),
+    0 0 30px rgba(244, 210, 119, 0.9),
     0 20px 35px rgba(0, 0, 0, 0.9);
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
@@ -142,7 +132,7 @@ body {
 .hero-photo img:hover {
   transform: scale(1.05);
   box-shadow:
-    0 0 35px rgba(244, 210, 119, 0.9),
+    0 0 40px rgba(244, 210, 119, 1),
     0 26px 40px rgba(0, 0, 0, 0.95);
 }
 
@@ -152,26 +142,18 @@ body {
   }
 }
 
-/* === SECTIONS === */
+/* === SECTIONS — NO LINES OR BLOCKS === */
 
 .section {
   position: relative;
-  padding: 60px 0;
-}
-
-.section::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--jb-gold), transparent);
-  opacity: 0.65;
+  padding: 40px 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .section-alt {
-  background: rgba(2, 17, 11, 0.85);
+  background: transparent;
 }
 
 .section h2 {
@@ -180,6 +162,7 @@ body {
   align-items: center;
   gap: 10px;
   color: var(--jb-gold);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .section h2::after {
@@ -195,7 +178,6 @@ body {
   color: var(--jb-text-muted);
 }
 
-/* short intro paragraph under section titles */
 .section-intro {
   max-width: 700px;
   margin-bottom: 24px;
@@ -210,39 +192,37 @@ body {
 }
 
 .card {
-  background: rgba(3, 26, 17, 0.94);
-  padding: 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(8, 47, 35, 0.9);
-  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.85);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  transition: transform 0.18s ease;
 }
 
 .card h3 {
   margin-top: 0;
   color: var(--jb-gold-soft);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.card p {
+  color: var(--jb-text-muted);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: var(--jb-gold-soft);
-  box-shadow:
-    0 22px 40px rgba(0, 0, 0, 0.9),
-    0 0 18px rgba(244, 210, 119, 0.3);
+  transform: translateY(-2px);
 }
 
-/* === CONTACT CARD & BUTTONS === */
+/* === CONTACT === */
 
 .contact-card {
-  background: radial-gradient(circle at top left, rgba(244, 210, 119, 0.12), transparent 55%),
-              rgba(3, 26, 17, 0.94);
-  border: 1px solid var(--jb-border-subtle);
-  padding: 25px;
-  border-radius: 18px;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  border-radius: 0;
   max-width: 480px;
-  box-shadow:
-    0 22px 40px rgba(0, 0, 0, 0.9),
-    0 0 18px rgba(244, 210, 119, 0.25);
+  box-shadow: none;
 }
 
 .contact-card p {
@@ -257,6 +237,8 @@ body {
   margin-top: 15px;
 }
 
+/* Buttons */
+
 .contact-btn {
   display: block;
   background: linear-gradient(135deg, var(--jb-gold-deep), var(--jb-gold));
@@ -268,27 +250,25 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   box-shadow:
     0 10px 22px rgba(0, 0, 0, 0.9),
-    0 0 18px rgba(244, 210, 119, 0.5);
+    0 0 18px rgba(244, 210, 119, 0.6);
 }
 
 .contact-btn:hover {
   transform: translateY(-2px);
   box-shadow:
     0 14px 26px rgba(0, 0, 0, 0.95),
-    0 0 24px rgba(244, 210, 119, 0.7);
-  filter: brightness(1.03);
+    0 0 26px rgba(244, 210, 119, 0.9);
 }
 
-/* Premium style for the resume button */
 .contact-btn.resume-btn {
   background: rgba(3, 26, 17, 0.96);
   border: 1px solid var(--jb-gold);
   color: var(--jb-gold);
   box-shadow:
-    0 0 18px rgba(244, 210, 119, 0.35),
+    0 0 18px rgba(244, 210, 119, 0.5),
     0 10px 22px rgba(0, 0, 0, 0.9);
 }
 
@@ -297,35 +277,7 @@ body {
   color: #1a1204;
 }
 
-/* === HIGHLIGHT STRIP === */
-
-.highlight-strip {
-  border-radius: 999px;
-  padding: 10px 18px;
-  background:
-    radial-gradient(circle at left, rgba(244, 210, 119, 0.22), transparent 65%),
-    rgba(3, 26, 17, 0.96);
-  border: 1px solid var(--jb-border-subtle);
-  display: inline-flex;
-  flex-direction: column;
-  gap: 2px;
-  margin-bottom: 22px;
-}
-
-.highlight-strip span {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  color: var(--jb-gold-soft);
-}
-
-.highlight-strip p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--jb-text-muted);
-}
-
-/* === SKILLS ROW === */
+/* === SKILLS === */
 
 .skills-row {
   display: flex;
@@ -339,7 +291,7 @@ body {
   border-radius: 999px;
   font-size: 0.8rem;
   border: 1px solid var(--jb-border-subtle);
-  background: rgba(2, 17, 11, 0.9);
+  background: rgba(2, 17, 11, 0.7);
   color: var(--jb-text);
 }
 
@@ -347,7 +299,7 @@ body {
 
 .timeline {
   margin-top: 20px;
-  border-left: 1px solid var(--jb-border-subtle);
+  border-left: 1px solid rgba(244, 210, 119, 0.35);
   padding-left: 16px;
 }
 
@@ -365,13 +317,12 @@ body {
   height: 10px;
   border-radius: 999px;
   background: var(--jb-gold);
-  box-shadow: 0 0 0 5px rgba(244, 210, 119, 0.25);
+  box-shadow: 0 0 0 5px rgba(244, 210, 119, 0.35);
 }
 
 .timeline-header {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
   align-items: baseline;
 }
 
@@ -396,24 +347,19 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .highlight-strip {
-    width: 100%;
-    border-radius: 14px;
-  }
 }
 
 /* === FOOTER === */
 
 .site-footer {
   text-align: center;
-  padding: 20px;
-  border-top: 1px solid var(--jb-border-subtle);
+  padding: 20px 0 30px;
   color: var(--jb-text-muted);
-  background-color: rgba(2, 17, 11, 0.9);
+  background: transparent;
+  border-top: none;
 }
 
-/* === SOFT FADE-IN ANIMATION === */
+/* === ANIMATIONS === */
 
 @keyframes fadeUp {
   from {
@@ -434,7 +380,6 @@ body {
   animation: fadeUp 0.7s ease-out both;
 }
 
-/* Slight stagger so sections don't pop in at once */
 section.section:nth-of-type(2) { animation-delay: 0.05s; }
 section.section:nth-of-type(3) { animation-delay: 0.10s; }
 section.section:nth-of-type(4) { animation-delay: 0.15s; }
